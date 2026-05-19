@@ -1,0 +1,20 @@
+[package]
+name = "rt1170reset"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+
+embedded-hal = "1.0"
+usb-device = "0.3"
+usbd-serial = "0.2"
+
+seeeduino-xiao-rp2040 = "0.6"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

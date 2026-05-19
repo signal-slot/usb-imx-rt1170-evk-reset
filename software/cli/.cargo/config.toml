@@ -1,0 +1,9 @@
+# This package is a host-side CLI. The firmware's `../.cargo/config.toml`
+# in this project sets `[build] target = "thumbv6m-none-eabi"`, which would
+# inappropriately propagate down to us via Cargo's config search. Override
+# back to the host triple so `cargo build` from this directory just works.
+#
+# Hardcoded for x86_64 Linux. Edit (or set CARGO_BUILD_TARGET in the
+# environment) if you build on a different host.
+[build]
+target = "x86_64-unknown-linux-gnu"
